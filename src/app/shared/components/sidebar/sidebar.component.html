@@ -6,9 +6,9 @@
     @if (!isCollapsed) {
       <div class="flex items-center space-x-3 w-full">
         <div class="relative flex-shrink-0">
-          <img src="favicon.ico" alt="Logo" class="h-7 w-7 transition-all hover:rotate-12 hover:scale-110">
+          <img src="Nuestr1.png" alt="Logo" class="h-12 w-12 transition-all hover:rotate-12 hover:scale-110">
         </div>
-        <h1 class="text-xl font-bold tracking-tight text-black flex-grow truncate">Fatima</h1>
+        <h1 class="text-xl font-bold tracking-tight text-black flex-grow truncate">Colegio Fatima</h1>
         <button (click)="toggleCollapsed()" 
                 class="p-1.5 rounded-full hover:bg-[#346fff]/80 transition-all hover:scale-110 active:scale-95"
                 aria-label="Collapse menu">
@@ -17,9 +17,9 @@
       </div>
     } @else {
       <div class="relative">
-        <img src="favicon.ico" alt="Logo" 
+        <img src="Nuestr1.png" alt="Logo" 
              (click)="toggleCollapsed()" 
-             class="h-7 w-7 transition-all hover:rotate-12 hover:scale-110 cursor-pointer">
+             class="h-8 w-8 transition-all hover:rotate-12 hover:scale-110 cursor-pointer">
       </div>
     }
   </div>
@@ -45,10 +45,49 @@
            [class.justify-start]="!isCollapsed" 
            class="flex items-center p-2.5 hover:bg-black/10 transition-all rounded-lg group border border-transparent justify-center active:scale-95">
           <div class="p-1.5 rounded-lg bg-black/10 group-hover:bg-[#346fff]/20 transition-all">
-            <mat-icon class="group-hover:scale-110 transition-transform">users</mat-icon>
+            <mat-icon class="group-hover:scale-110 transition-transform">people</mat-icon>
           </div> 
           @if (!isCollapsed) {
-            <span class="ml-3 font-medium text-black text-sm truncate">Alumnos</span>
+            <span class="ml-3 font-medium text-black text-sm truncate">Gestión Alumnos</span>
+          }
+        </a>
+      </li>
+      <li>
+        <a routerLink="/index/gestion" 
+           routerLinkActive="bg-black/10 shadow-lg" 
+           [class.justify-start]="!isCollapsed" 
+           class="flex items-center p-2.5 hover:bg-black/10 transition-all rounded-lg group border border-transparent justify-center active:scale-95">
+          <div class="p-1.5 rounded-lg bg-black/10 group-hover:bg-[#346fff]/20 transition-all">
+            <mat-icon class="group-hover:scale-110 transition-transform">manage_accounts</mat-icon>
+          </div> 
+          @if (!isCollapsed) {
+            <span class="ml-3 font-medium text-black text-sm truncate">Gestión Tablets</span>
+          }
+        </a>
+      </li>
+      <li>
+        <a routerLink="/index/ingreso" 
+           routerLinkActive="bg-black/10 shadow-lg" 
+           [class.justify-start]="!isCollapsed" 
+           class="flex items-center p-2.5 hover:bg-black/10 transition-all rounded-lg group border border-transparent justify-center active:scale-95">
+          <div class="p-1.5 rounded-lg bg-black/10 group-hover:bg-[#346fff]/20 transition-all">
+            <mat-icon class="group-hover:scale-110 transition-transform">tablet_android</mat-icon>
+          </div> 
+          @if (!isCollapsed) {
+            <span class="ml-3 font-medium text-black text-sm truncate">Ingreso de Tablets</span>
+          }
+        </a>
+      </li>
+      <li>
+        <a routerLink="/index/historial" 
+           routerLinkActive="bg-black/10 shadow-lg" 
+           [class.justify-start]="!isCollapsed" 
+           class="flex items-center p-2.5 hover:bg-black/10 transition-all rounded-lg group border border-transparent justify-center active:scale-95">
+          <div class="p-1.5 rounded-lg bg-black/10 group-hover:bg-[#346fff]/20 transition-all">
+            <mat-icon class="group-hover:scale-110 transition-transform">history</mat-icon>
+          </div> 
+          @if (!isCollapsed) {
+            <span class="ml-3 font-medium text-black text-sm truncate">Historial de Asignación</span>
           }
         </a>
       </li>
