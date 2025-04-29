@@ -1,0 +1,61 @@
+<aside [class.w-72] ='!isCollapsed'
+[class.w-16] = 'isCollapsed' class="h-full bg-[#88c0ff] text-black transition-all duration-300 fixed md:relative z-10 shadow-xl">
+<div class="p-4 flex items-center justify-center border-b border-[#0b1b5b]/30 relative ">
+    @if(!isCollapsed) {
+        <div class="flex items-center space-x-3 w-full">
+            <div class="relative">
+                <img src="favicon.ico" alt="" class="h-7 w-7 transition-transform hover:rotate-12 ">
+            </div>
+            <h1 class="text-xl font-bold tracking-tight text-black flex-grow ">Fatima</h1>
+            <button (click)="toggleCollapsed()" class="p-1.5 rounded-full hover:bg-[#346fff]/80 transition-all hover:scale-110  ">
+                <mat-icon>close</mat-icon>
+
+            </button>
+        </div>
+    }@else {
+        <div class="relative">
+            <img src="favicon.ico" alt=""  (click)="toggleCollapsed()" class="h-7 w-7 transition-transform hover:rotate-12 cursor-pointer">
+        </div>
+    }
+</div>
+<nav class="mt-6 px-2 ">
+    <ul class="space-y-1 ">
+        <li>
+            <a routerLink="index/" routerLinkActive="bg-black/10 shadow-lg " [class.justify-start]="!isCollapsed" class="flex items-center p-2.5 hover:bg-black/10 transition-all rounded-lg group border border-transparent justify-center ">
+                <div class="p-1.5 rounded-lg bg-black/10 ">
+                    <mat-icon>dashboard</mat-icon>
+                </div> 
+                @if(!isCollapsed) {
+                    <span class="ml-3 font-medium text-black text-sm ">Dashboard</span>
+                }
+        </a>
+        </li>
+    </ul>
+</nav> 
+<div class="absolute botton-0 w-full p-3 bg-[#5a98ff]/90 border-t border-[#0b1b5b]/30 ">
+    <div [class.justify-between]= '!isCollapsed' class="flex items-center justify-center ">
+        <div class="flex items-center ">
+            <div class="relative ">
+                <img src="favicon.ico" alt="" [class.cursor-pointer]="isCollapsed" (click)="isCollapsed ? toggleCollapsed() : null" class="h-8 w-8 rounded-full object-cover border-2 border-white hover:border-black transition-all">
+            </div>
+            @if(!isCollapsed) {
+                <div class="ml-3 ">
+                    <p class="text-sm font-medium text-black ">
+                        KARINA
+                    </p>
+                    <p class="text-xs text-black/80 ">
+                        profesora tecnologia
+                    </p>
+                </div>
+            }
+        </div>
+        @if (!isCollapsed) {
+            <button class="p-1 rounded-lg hover:bg-black/10 transition-all">
+                <mat-icon>logout</mat-icon>
+            </button>
+        }
+    </div>
+  
+</div>
+
+</aside>
